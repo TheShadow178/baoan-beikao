@@ -80,6 +80,18 @@
     transition:.18s;
   }
   .tabs a.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .tabs a.ext{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700}
+
+  .cta{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    text-decoration:none;color:#fff;
+    background:linear-gradient(135deg,#2f6fed,#1b4dc4);
+    border-radius:var(--radius);padding:15px 16px;margin:12px 0 4px;
+    box-shadow:0 6px 18px rgba(47,111,237,.28);
+  }
+  .cta b{display:block;font-size:16px;font-weight:800;margin-bottom:2px}
+  .cta span{font-size:12.5px;color:#c8dbff}
+  .cta i{font-style:normal;font-size:22px;opacity:.85}
 
   /* ---------- 通用 ---------- */
   section{padding:26px 0 6px;scroll-margin-top:56px}
@@ -227,6 +239,7 @@
     <a href="#drill">真题示例</a>
     <a href="#plan">3天计划</a>
     <a href="#exam">考场避坑</a>
+    <a href="questions.html" class="ext">2026题库 ›</a>
   </div>
 </nav>
 
@@ -263,6 +276,14 @@
     <strong>先避一个坑</strong>
     官方题库不对外公开，网上卖的「真题库」都是按大纲＋考生回忆整理的，可以用，但会遇到答案不一致的题。看到明显违背「保安没有执法权」的答案，按常识判断，别硬记错答案。
   </div>
+
+  <a class="cta" href="questions.html">
+    <div>
+      <b>2026 题库 · 边看边练</b>
+      <span>160 道题，含 100 题随机模拟考与错题本</span>
+    </div>
+    <i>›</i>
+  </a>
 </section>
 
 <!-- ============ 答题元规则 ============ -->
@@ -455,8 +476,10 @@
         <tr><td>报警电话</td><td>火警 <b>119</b> / 匪警 <b>110</b> / 急救 <b>120</b> / 交通事故 <b>122</b></td></tr>
         <tr><td>抢劫罪刑事责任年龄</td><td>满 <b>14</b> 周岁</td></tr>
         <tr><td>保安服务公司注册资本</td><td>不低于 <b>100 万元</b></td></tr>
-        <tr><td>招用不符合条件人员担任保安员</td><td>罚款 <b>1 万～5 万元</b></td></tr>
-        <tr><td>培训机构未按大纲培训（情节严重）</td><td>罚款 <b>5 万～10 万元</b></td></tr>
+        <tr><td>招用不符合条件人员担任保安员</td><td>责令改正＋警告，情节严重 <b>1 万～5 万元</b></td></tr>
+        <tr><td>培训机构未按大纲培训</td><td>责令改正＋警告，情节严重 <b>1 万～5 万元</b></td></tr>
+        <tr><td>泄露秘密 / 监控设备侵权 / 删改扩散监控</td><td>罚款 <b>2 万～10 万元</b></td></tr>
+        <tr><td>保安员违规（扣证、搜身、打人等）</td><td>予以<b>训诫</b>；情节严重的<b>吊销</b>保安员证</td></tr>
         <tr><td>保安员证被吊销后不得从业</td><td><b>3 年</b>内</td></tr>
         <tr><td>窄路（不足 4 米）内禁止停车范围</td><td><b>50 米</b>以内</td></tr>
       </table>
