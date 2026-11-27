@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101826">
 <title>2026 题库 · 保安员证</title>
-<meta name="description" content="保安员证 2026 题库：233 道真题，含分类练习、100 题随机模拟考（90 分钟自动评分）与错题本。">
+<meta name="description" content="保安员证 2026 题库：323 道真题，含分类练习、100 题模拟考（3 套固定卷 + 随机卷，90 分钟自动评分）与错题本。">
 <style>
   :root{
     --ink:#151a22; --ink-2:#3d4756; --muted:#6b7686;
@@ -180,12 +180,14 @@
       <div class="qcard">
         <p class="stem" style="margin-bottom:8px"><b>规则</b></p>
         <p style="margin:0;font-size:14.5px;line-height:1.8;color:var(--ink-2)">
-          随机抽 <b>100 题</b>（60 单选 + 20 多选 + 20 判断），每题 1 分，<b>90 分钟</b>，60 分及格。<br>
+          每套 <b>100 题</b>（60 单选 + 20 多选 + 20 判断），每题 1 分，<b>90 分钟</b>，60 分及格。<br>
           多选少选、错选都不得分；交卷后立即出分并给出错题清单。
         </p>
+        <p style="margin:12px 0 6px;font-size:13.5px;color:var(--ink-2);font-weight:700">选择试卷</p>
+        <div class="filters" id="setFilter" style="padding:2px 0 0"></div>
       </div>
       <button class="submit" id="startExam" style="padding:13px;font-size:15px">开始模拟考</button>
-      <p style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px">中途退出不保存进度</p>
+      <p style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:10px">固定卷每次抽题相同，方便反复练习；随机卷每次不同。中途退出不保存进度。</p>
     </div>
     <div id="examRun" hidden>
       <div class="exam-top">
@@ -237,6 +239,24 @@
     var a = arr.slice();
     for (var i = a.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  // 可复现的伪随机洗牌：同一 seed 下结果固定，保证「固定卷」每次抽题一致
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function seededShuffle(arr, seed) {
+    var a = arr.slice();
+    var rnd = mulberry32(seed >>> 0);
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(rnd() * (i + 1));
       var t = a[i]; a[i] = a[j]; a[j] = t;
     }
     return a;
@@ -424,14 +444,37 @@
   var timerEl = document.getElementById('examTimer');
   var barEl = document.getElementById('examBar');
 
-  function pickBy(type, n) {
+  function pickBy(type, n, seed) {
     var pool = BANK.map(function (q, i) { return i; }).filter(function (i) { return typeOf(BANK[i]) === type; });
-    return shuffle(pool).slice(0, Math.min(n, pool.length));
+    var shuffled = (seed || seed === 0) ? seededShuffle(pool, seed) : shuffle(pool);
+    return shuffled.slice(0, Math.min(n, pool.length));
+  }
+
+  var examSet = 'random'; // 'random' | 1 | 2 | 3
+  var setBox = document.getElementById('setFilter');
+  var SETS = [{ id: 'random', label: '随机卷' }, { id: 1, label: '第一套' }, { id: 2, label: '第二套' }, { id: 3, label: '第三套' }];
+  setBox.innerHTML = SETS.map(function (s, i) {
+    return '<button class="chip' + (i === 0 ? ' on' : '') + '" data-set="' + s.id + '">' + s.label + '</button>';
+  }).join('');
+  setBox.addEventListener('click', function (e) {
+    var t = e.target.closest('.chip'); if (!t) return;
+    examSet = (t.dataset.set === 'random') ? 'random' : (+t.dataset.set);
+    Array.prototype.forEach.call(setBox.querySelectorAll('.chip'), function (b) { b.classList.toggle('on', b === t); });
+  });
+
+  function buildExamIds() {
+    if (examSet === 'random') {
+      return shuffle(pickBy('单选', 60).concat(pickBy('多选', 20), pickBy('判断', 20)));
+    }
+    // 固定卷：seed 固定 → 抽题集合与呈现顺序每次都一致；不同套 seed 不同
+    var base = examSet * 1000;
+    var ids = pickBy('单选', 60, base + 1).concat(pickBy('多选', 20, base + 2), pickBy('判断', 20, base + 3));
+    return seededShuffle(ids, base + 9);
   }
 
   startBtn.addEventListener('click', function () {
-    var ids = shuffle(pickBy('单选', 60).concat(pickBy('多选', 20), pickBy('判断', 20)));
-    exam = { ids: ids, answers: {}, cur: 0, endAt: Date.now() + 90 * 60 * 1000, done: false };
+    var ids = buildExamIds();
+    exam = { ids: ids, answers: {}, cur: 0, endAt: Date.now() + 90 * 60 * 1000, done: false, set: examSet };
     introEl.hidden = true; resEl.hidden = true; runEl.hidden = false;
     document.querySelector('.modes').scrollIntoView({ block: 'start' });
     renderExamQ();
@@ -534,12 +577,13 @@
 
     var score = right;
     var pass = score >= 60;
+    var setLabel = exam.set === 'random' ? '随机卷' : ('第' + ['一', '二', '三'][exam.set - 1] + '套');
     runEl.hidden = true;
     resEl.hidden = false;
     resEl.innerHTML =
       '<div class="result">' +
         '<div class="score ' + (pass ? 'pass' : 'fail') + '">' + score + '</div>' +
-        '<p>' + (pass ? '及格，可以约考了' : '未到 60 分，把这批错题过两遍再考一次') + '</p>' +
+        '<p>' + (pass ? '及格，可以约考了' : '未到 60 分，把这批错题过两遍再考一次') + '（' + setLabel + '）</p>' +
         '<div class="breakdown">' +
           '<div><b>' + stat['单选'][0] + '/' + stat['单选'][1] + '</b>单选</div>' +
           '<div><b>' + stat['多选'][0] + '/' + stat['多选'][1] + '</b>多选</div>' +
