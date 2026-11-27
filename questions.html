@@ -283,7 +283,13 @@
   /* ---------------- 练习题渲染 ---------------- */
   var CATS = ['全部', '法律', '业务', '消防', '急救', '交通', '技术', '职业'];
   var curCat = '全部', curType = '全部';
-  var answered = {}; // index -> [selected]
+  var PKEY = 'baoan_progress_v1';
+  var answered = {};   // 已确认的作答：index -> [selected]
+  var pending = {};    // 多选题未确认的勾选：index -> [selected]
+  try { answered = JSON.parse(localStorage.getItem(PKEY) || '{}') || {}; } catch (e) { answered = {}; }
+  function saveProgress() {
+    try { localStorage.setItem(PKEY, JSON.stringify(answered)); } catch (e) {}
+  }
   var catBox = document.getElementById('catFilter');
   var typeBox = document.getElementById('typeFilter');
   var listEl = document.getElementById('practiceList');
@@ -321,8 +327,8 @@
   function cardHTML(i, opts) {
     var q = BANK[i], t = typeOf(q);
     var cls = t === '多选' ? 'badge t2' : (t === '判断' ? 'badge t3' : 'badge t1');
-    var sel = answered[i];
-    var done = !!sel;
+    var sel = answered[i] || pending[i];
+    var done = !!answered[i];
     var optsHTML = q.o.map(function (o, k) {
       var c = 'opt';
       if (done) {
@@ -360,11 +366,13 @@
     var sub = e.target.closest('[data-submit]');
     if (sub) {
       var si = +sub.dataset.submit;
-      var sel = answered[si];
+      var sel = pending[si];
       if (!sel || !sel.length) return;
       var q = BANK[si];
       if (!sameSet(sel, q.a)) addWrong(si);
       answered[si] = sel.slice();
+      pending[si] = null;
+      saveProgress();
       renderPractice();
       return;
     }
@@ -375,11 +383,11 @@
     if (answered[i]) return;
 
     if (t === '多选') {
-      var cur = answered[i] || [];
+      var cur = (pending[i] || []).slice();
       var pos = cur.indexOf(k);
       if (pos > -1) cur.splice(pos, 1); else cur.push(k);
-      answered[i] = cur.slice();
-      // 局部更新，避免整页重绘导致跳动
+      pending[i] = cur;
+      // 局部更新，不重绘整页
       var card = document.getElementById('qc' + i);
       Array.prototype.forEach.call(card.querySelectorAll('.opt'), function (b) {
         b.classList.toggle('sel', cur.indexOf(+b.dataset.k) > -1);
@@ -391,13 +399,17 @@
       }
     } else {
       answered[i] = [k];
+      pending[i] = null;
       if (!sameSet([k], qq.a)) addWrong(i);
+      saveProgress();
       renderPractice();
     }
   });
 
   resetBtn.addEventListener('click', function () {
     answered = {};
+    pending = {};
+    saveProgress();
     renderPractice();
   });
 
