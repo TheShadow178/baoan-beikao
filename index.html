@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101826">
+<title>保安员证 · 杭州备考手册</title>
+<meta name="description" content="杭州/浙江保安员证（上岗证）备考笔记：常识可推区、必背数字与法条、真题示例、考场避坑。">
+<style>
+  :root{
+    --ink:#151a22;
+    --ink-2:#3d4756;
+    --muted:#6b7686;
+    --line:#e6e9ef;
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --accent:#2f6fed;
+    --accent-soft:#eaf1ff;
+    --warn:#d9481f;
+    --warn-soft:#fdf0ec;
+    --ok:#0f7a55;
+    --ok-soft:#e9f6f1;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    letter-spacing:.01em;
+    padding-bottom:calc(72px + env(safe-area-inset-bottom));
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 14px}
+
+  /* ---------- 头部 ---------- */
+  header.hero{
+    background:linear-gradient(160deg,#101826 0%,#1b2838 60%,#22303f 100%);
+    color:#fff;
+    padding:calc(22px + env(safe-area-inset-top)) 0 20px;
+  }
+  .hero .kicker{
+    font-size:12px;letter-spacing:.18em;color:#8fb0d6;text-transform:uppercase;margin:0 0 6px;
+  }
+  .hero h1{
+    font-size:26px;line-height:1.3;margin:0 0 6px;font-weight:800;letter-spacing:-.01em;
+  }
+  .hero p.sub{margin:0;color:#a9b8c9;font-size:13.5px}
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;
+  }
+  .stat{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:10px;padding:9px 8px;text-align:center;
+  }
+  .stat b{display:block;font-size:19px;line-height:1.2;font-weight:800}
+  .stat span{display:block;font-size:11px;color:#9fb0c2;margin-top:2px}
+
+  /* ---------- 悬浮目录 ---------- */
+  nav.tabs{
+    position:sticky;top:0;z-index:40;
+    background:rgba(245,246,248,.92);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .tabs-inner{
+    display:flex;gap:8px;overflow-x:auto;padding:9px 14px;
+    scrollbar-width:none;max-width:720px;margin:0 auto;
+  }
+  .tabs-inner::-webkit-scrollbar{display:none}
+  .tabs a{
+    flex:0 0 auto;text-decoration:none;color:var(--ink-2);
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;font-size:13.5px;font-weight:600;white-space:nowrap;
+    transition:.18s;
+  }
+  .tabs a.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  /* ---------- 通用 ---------- */
+  section{padding:26px 0 6px;scroll-margin-top:56px}
+  .sec-head{display:flex;align-items:baseline;gap:9px;margin:0 0 4px}
+  .sec-num{
+    flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--ink);color:#fff;
+    font-size:13px;font-weight:700;display:grid;place-items:center;transform:translateY(-1px);
+  }
+  h2{font-size:20px;margin:0;font-weight:800;letter-spacing:-.01em}
+  .sec-desc{margin:2px 0 14px;color:var(--muted);font-size:13.5px;line-height:1.65}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:16px;margin-bottom:12px;
+  }
+  .card h3{
+    font-size:16px;margin:0 0 8px;font-weight:750;display:flex;align-items:center;gap:7px;
+  }
+  .tag{
+    display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px;
+    vertical-align:middle;letter-spacing:.02em;
+  }
+  .tag.a{background:var(--accent-soft);color:#1d4fb8}
+  .tag.b{background:var(--warn-soft);color:var(--warn)}
+  .tag.c{background:var(--ok-soft);color:var(--ok)}
+
+  ul.clean{margin:6px 0 0;padding-left:0;list-style:none}
+  ul.clean li{position:relative;padding-left:16px;margin:5px 0;font-size:15px}
+  ul.clean li::before{
+    content:"";position:absolute;left:2px;top:.68em;width:5px;height:5px;border-radius:50%;
+    background:#c3ccd9;
+  }
+  ul.clean li b{font-weight:700}
+  .hl{background:linear-gradient(transparent 62%,#ffe9a8 62%);font-weight:600}
+  .no{color:var(--warn);font-weight:700}
+  .yes{color:var(--ok);font-weight:700}
+
+  .rule{
+    border-left:3px solid var(--accent);background:var(--accent-soft);
+    border-radius:0 10px 10px 0;padding:10px 12px;margin:12px 0;font-size:14.5px;line-height:1.65;
+  }
+  .rule.w{border-color:var(--warn);background:var(--warn-soft)}
+  .rule.g{border-color:var(--ok);background:var(--ok-soft)}
+  .rule strong{display:block;font-size:13px;letter-spacing:.04em;margin-bottom:3px;opacity:.75}
+
+  /* ---------- 折叠题 ---------- */
+  details.q{
+    border:1px solid var(--line);border-radius:11px;background:#fff;margin:9px 0;overflow:hidden;
+  }
+  details.q summary{
+    list-style:none;cursor:pointer;padding:11px 12px;font-size:14.5px;line-height:1.6;
+    display:flex;gap:9px;align-items:flex-start;
+  }
+  details.q summary::-webkit-details-marker{display:none}
+  details.q summary .qno{
+    flex:0 0 auto;font-size:11px;font-weight:800;color:#fff;background:#b9c3d1;
+    border-radius:5px;padding:1px 6px;margin-top:2px;
+  }
+  details.q[open] summary .qno{background:var(--accent)}
+  details.q summary .qt{flex:1 1 auto}
+  details.q summary .arrow{
+    flex:0 0 auto;color:#b9c3d1;font-size:12px;margin-top:3px;transition:.2s;
+  }
+  details.q[open] summary .arrow{transform:rotate(90deg);color:var(--accent)}
+  details.q .opts{
+    padding:0 12px 2px 12px;font-size:14px;color:var(--ink-2);line-height:1.7;
+  }
+  details.q .opts span{display:block}
+  details.q .ans{
+    margin:0 12px 12px;padding:9px 11px;background:var(--ok-soft);border-radius:8px;
+    font-size:14px;line-height:1.65;color:#0b5f43;
+  }
+  details.q .ans b{color:#083f2d}
+  details.q .ans em{font-style:normal;color:#496b5e;font-size:13px;display:block;margin-top:4px}
+
+  /* ---------- 表格 ---------- */
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -4px 0;padding:0 4px}
+  table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.55}
+  th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#f0f2f6;font-weight:700;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+  td:first-child{font-weight:600;color:var(--ink);width:44%}
+  tr:last-child td{border-bottom:none}
+  td b{color:var(--warn);font-weight:800}
+
+  /* ---------- 时间线 ---------- */
+  .plan{margin:4px 0 0;padding:0;list-style:none}
+  .plan li{
+    position:relative;padding:0 0 16px 26px;border-left:2px solid #e2e7ef;margin-left:6px;
+  }
+  .plan li:last-child{border-left-color:transparent;padding-bottom:0}
+  .plan li::before{
+    content:"";position:absolute;left:-6px;top:5px;width:10px;height:10px;border-radius:50%;
+    background:#fff;border:2.5px solid var(--accent);
+  }
+  .plan .d{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:.03em}
+  .plan .t{font-size:14.5px;line-height:1.65;margin-top:1px}
+
+  footer{
+    margin-top:26px;padding:18px 0 26px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:12.5px;line-height:1.75;
+  }
+  footer a{color:var(--muted)}
+
+  /* ---------- 悬浮朗读 ---------- */
+  #speak{
+    position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;
+    background:var(--ink);color:#fff;border:none;border-radius:999px;
+    padding:11px 16px;font-size:13.5px;font-weight:700;
+    box-shadow:0 6px 20px rgba(16,24,38,.28);display:flex;align-items:center;gap:7px;
+    font-family:inherit;
+  }
+  #speak:active{transform:scale(.96)}
+  #speak.on{background:var(--warn)}
+  .dot{width:7px;height:7px;border-radius:50%;background:#4ade80}
+  #speak.on .dot{background:#fff;animation:blink 1s infinite}
+  @keyframes blink{50%{opacity:.25}}
+
+  @media (min-width:560px){
+    .hero h1{font-size:30px}
+    body{font-size:16.5px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">浙江 · 杭州</p>
+    <h1>保安员证备考手册</h1>
+    <p class="sub">把「能靠常识推的」和「必须死记的」分开，2～3 天足够</p>
+    <div class="stats">
+      <div class="stat"><b>100</b><span>题量</span></div>
+      <div class="stat"><b>90</b><span>分钟</span></div>
+      <div class="stat"><b>60</b><span>分及格</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="tabs-inner" id="tabs">
+    <a href="#quick" class="on">速览</a>
+    <a href="#meta">答题元规则</a>
+    <a href="#common">常识可推区</a>
+    <a href="#memorize">必背区</a>
+    <a href="#drill">真题示例</a>
+    <a href="#plan">3天计划</a>
+    <a href="#exam">考场避坑</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ 速览 ============ -->
+<section id="quick">
+  <div class="sec-head"><span class="sec-num">0</span><h2>先花 60 秒搞清楚</h2></div>
+  <p class="sec-desc">你考的是《保安员证》（俗称保安证、上岗证），不是人社保的「保安员职业技能等级证」。前者是从业准入，干保安必须有；后者是评等级、加工资用的。</p>
+
+  <div class="card">
+    <h3>考试与报名硬信息</h3>
+    <div class="tbl-scroll">
+      <table>
+        <tr><td>考试形式</td><td>机考、闭卷，人脸识别进场</td></tr>
+        <tr><td>题量与时长</td><td>不少于 100 题 / 90 分钟</td></tr>
+        <tr><td>题型</td><td>单选题为主 + 多选题 + 判断题，无主观题</td></tr>
+        <tr><td>及格线</td><td><b>60 分</b>（满分 100）</td></tr>
+        <tr><td>题目来源</td><td>公安部保安员考试题库<b>随机抽取</b></td></tr>
+        <tr><td>报名条件</td><td>年满 18 周岁、未达退休年龄、身体健康、品行良好、初中以上学历</td></tr>
+        <tr><td>报名入口</td><td>浙里办 APP / 浙江政务服务网搜「保安员证核发」，或到现住地县级公安机关报名</td></tr>
+        <tr><td>费用</td><td>考试费 <b>40 元</b>；首次补考免费，第三次起再交 40 元</td></tr>
+        <tr><td>出证</td><td>成绩合格后由设区市公安机关制证，一般几天内可领</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="rule g">
+    <strong>结论</strong>
+    这门考试不考记忆力，考的是「你知不知道保安的权限边界」。把下面的常识区看懂，再把必背的数字过两遍，刷 800～1000 道题，稳过。
+  </div>
+
+  <div class="rule w">
+    <strong>先避一个坑</strong>
+    官方题库不对外公开，网上卖的「真题库」都是按大纲＋考生回忆整理的，可以用，但会遇到答案不一致的题。看到明显违背「保安没有执法权」的答案，按常识判断，别硬记错答案。
+  </div>
+</section>
+
+<!-- ============ 答题元规则 ============ -->
+<section id="meta">
+  <div class="sec-head"><span class="sec-num">1</span><h2>答题元规则</h2></div>
+  <p class="sec-desc">不确定答案时，用这 6 条去排除，命中率很高。这是「常识区」的总纲。</p>
+
+  <div class="card">
+    <h3>① 保安没有执法权</h3>
+    <p style="margin:0;font-size:15px">凡是让保安去<span class="no">搜身、搜包、扣押证件财物、限制人身自由、罚款、讯问、抓捕关人</span>的选项，一律错。保安能做的是：查验、登记、制止、扭送公安机关、保护现场、报告。</p>
+  </div>
+
+  <div class="card">
+    <h3>② 先报告，再处置</h3>
+    <p style="margin:0;font-size:15px">出现异常情况，顺手选项通常是「立即向客户单位/公安机关报告」＋「在确保自身安全的前提下处置」。凡是「独自处理完再说」「先斩后奏」的，多半错。</p>
+  </div>
+
+  <div class="card">
+    <h3>③ 现场永远优先保护</h3>
+    <p style="margin:0;font-size:15px">发生案件，第一反应是<span class="hl">保护现场 + 报警</span>，不是清点损失、不是通知失主回家翻东西、不是先锁门。顺序错就是错。</p>
+  </div>
+
+  <div class="card">
+    <h3>④ 绝对化表述多半是错的</h3>
+    <p style="margin:0;font-size:15px">「立即抓获」「强制执行」「随意」「任何情况下都必须」「可以自行拆除」——这类词出现时提高警惕。反过来，「及时报告」「协助」「配合」「在确保安全的情况下」是真答案的常见长相。</p>
+  </div>
+
+  <div class="card">
+    <h3>⑤ 问「错误/不属于」的题，先圈题干</h3>
+    <p style="margin:0;font-size:15px">这类题占了失分的很大一部分。手机看不出来就默念一遍题干再选，别看到熟悉的选项就点。</p>
+  </div>
+
+  <div class="card">
+    <h3>⑥ 多选题：少选、错选都不得分</h3>
+    <p style="margin:0;font-size:15px">没把握的选项不要凑数，宁可少选。但也不要留空——按「确定对的都选上」来答。</p>
+  </div>
+</section>
+
+<!-- ============ 常识区 ============ -->
+<section id="common">
+  <div class="sec-head"><span class="sec-num">2</span><h2>常识可推区（不用背）</h2></div>
+  <p class="sec-desc">这一区看懂逻辑就会做，占分最多。每组给一条「一句话原则」，配 2～3 道公开题库里的真题，点开看答案。</p>
+
+  <div class="card">
+    <h3>A · 权责边界 <span class="tag a">高频</span></h3>
+    <ul class="clean">
+      <li><b>能做：</b>查验出入证件、登记人车物、按规定设临时隔离区、制止不法侵害后<span class="yes">扭送公安</span>、保护现场、报警报告</li>
+      <li><b>不能做：</b><span class="no">限制人身自由、搜查身体和物品、扣押证件财物、罚款收费、讯问、参与追索债务、删改或扩散监控影像</span></li>
+      <li>单位内部治安保卫工作由<b>本单位</b>负责；重大活动的安全检查由<b>公安机关</b>组织</li>
+      <li>保安员依法行使<b>正当防卫</b>造成损害不负刑事责任，但不能超过必要限度</li>
+    </ul>
+
+    <details class="q"><summary><span class="qno">1</span><span class="qt">根据《保安服务管理条例》，下列不属于保安员禁止性行为的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 扣押他人证件、财物</span><span>B. 搜查他人身体及物品</span><span>C. 开展守卫活动</span><span>D. 侮辱、殴打他人</span></div>
+      <div class="ans"><b>答案 C。</b>开展守卫活动正是本职工作。<em>A、B、D 是条例明令禁止的行为，属于必考清单。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">2</span><span class="qt">关于保安员参与追索债务，下列说法错误的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 保安从业单位和保安员不得以任何理由参与追索债务</span><span>B. 经当事人授权后保安员可以参与追索债务</span><span>C. 保安员不得以任何方式追索债务</span></div>
+      <div class="ans"><b>答案 B。</b>「当事人授权」也不能成为理由，这是绝对禁止项。<em>考「授权/委托就可以」的，基本都是陷阱。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">3</span><span class="qt">环保部门 3 人到造纸厂排污检查，门卫乙、丙以「正在生产」为由拒不让进，致使检查无法进行。这种行为属于（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 正当业务行为</span><span>B. 妨害公务行为</span><span>C. 规范勤务行为</span><span>D. 正当职务行为</span></div>
+      <div class="ans"><b>答案 B。</b>保安员有义务支持、配合执法部门依法执行公务，阻拦即妨害公务。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>B · 门卫 / 巡逻 / 守护 / 押运</h3>
+    <ul class="clean">
+      <li><b>无证车辆强行闯入：</b>立即报告＋<span class="hl">记下车型、号牌、颜色</span>（不是关大门硬拦、不是直接放行）</li>
+      <li><b>伪造证件：</b>证件<span class="hl">留存</span>、禁止通行、报告客户单位等处置（不撕毁、不直接还回去）</li>
+      <li><b>发现可疑危险物品 / 爆炸威胁：</b>立即报警＋报告，不自行拆解、不擅自搬动</li>
+      <li><b>群体性冲击门卫：</b>关闭大门、把好侧门、严格按制度验证出入，同时报告</li>
+      <li><b>交接班：</b>先看交班记录并核对，再听情况说明、检查装备</li>
+      <li><b>巡逻方法：</b>定线、不定线、定线与不定线结合、点与线结合</li>
+      <li><b>报警内容：</b>报警人姓名、联系电话、报警事由、发生单位的名称和位置</li>
+    </ul>
+
+    <details class="q"><summary><span class="qno">4</span><span class="qt">保安员值勤时遇无证车辆强行闯入，应当（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 立即报告后放行</span><span>B. 立即报告，并记下车辆的车型、号牌、颜色</span><span>C. 只记下车型、号牌、颜色</span><span>D. 立即关闭大门</span></div>
+      <div class="ans"><b>答案 B。</b>报告和记录两件事都要做，缺一不可。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">5</span><span class="qt">查验出入证件时遇伪造证件，正确做法是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 将证件撕毁，以免再欺骗他人</span><span>B. 将证件交还本人，禁止通行</span><span>C. 将证件留存，向客户单位报告等待处置</span><span>D. 询问证件来源后放行</span></div>
+      <div class="ans"><b>答案 C。</b>留存＋报告＋等处置，三步完整。<em>撕毁属于故意损毁他人财物，是错误示范。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">6</span><span class="qt">巡逻时接到居民反映「邻居家门敞开、家中无人、物品凌乱」，赶到现场首先应（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 先锁门再报警</span><span>B. 先看损失大小再决定是否报警</span><span>C. 先通知失主回家清点</span><span>D. 保护现场并且报警</span></div>
+      <div class="ans"><b>答案 D。</b>保护现场＋报警是标准答案，任何「先动现场」的选项都错。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>C · 消防</h3>
+    <ul class="clean">
+      <li><b>总原则：</b>先报警后救火；<span class="hl">先控制后消灭、救人第一、先重点后一般</span></li>
+      <li><b>高层火灾</b>不坐普通电梯（火灾时随时断电）；走疏散楼梯</li>
+      <li><b>地下建筑火灾：</b>先启用事故照明或手电引导疏散</li>
+      <li><b>二氧化碳灭火器</b>在室内狭小空间用完后，操作者应<span class="hl">迅速离开</span>（防缺氧窒息）</li>
+      <li><b>干粉灭火器</b>对准<span class="hl">火焰根部</span>扫射；室内用后注意通风</li>
+      <li><b>常闭式防火门处于关闭状态</b>是正常要求，<b>不是</b>安全隐患（易错）</li>
+    </ul>
+
+    <details class="q"><summary><span class="qno">7</span><span class="qt">干粉灭火器扑救可燃、易燃液体火灾时，应对准（ ）扫射</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 火焰上部</span><span>B. 火焰中部</span><span>C. 火焰中下部</span><span>D. 火焰根部</span></div>
+      <div class="ans"><b>答案 D。</b>对着火焰根部才是灭火，对着火苗只是「吹火」。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">8</span><span class="qt">在室内狭小空间使用二氧化碳灭火器灭火后，操作者应（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 迅速离开</span><span>B. 迅速拿开灭火器</span><span>C. 对准火焰根部</span><span>D. 倒置灭火器</span></div>
+      <div class="ans"><b>答案 A。</b>二氧化碳会挤占氧气，密闭空间容易窒息。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">9</span><span class="qt">下列不属于消防安全隐患的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 楼内消防器材维护记录不完整</span><span>B. 办公室电源接触不良</span><span>C. 常闭式防火门处于关闭状态</span><span>D. 有人无证使用电焊</span></div>
+      <div class="ans"><b>答案 C。</b>常闭式防火门本来就该常闭，这是规范要求，不是隐患。<em>这类「看着像问题其实没问题」的题最容易错。</em></div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>D · 现场急救</h3>
+    <ul class="clean">
+      <li><b>救护顺序：</b>先救命（呼吸心跳停止）→ 再止血 → 再包扎固定 → 最后处理轻伤</li>
+      <li><b>判断呼吸：</b>看胸廓有无起伏＋感觉有无气流拂面，持续观察 <span class="hl">10 秒</span></li>
+      <li><b>溺水：</b>先清除口鼻异物 → 打开气道查呼吸 → 心肺复苏 → 成功后擦干保暖</li>
+      <li><b>止血带：</b>每 <span class="hl">40～50 分钟</span>放松一次（不是 5 分钟、不是 10 分钟）</li>
+      <li><b>加压包扎：</b>敷料要超过伤口周边 <span class="hl">3 厘米</span></li>
+      <li><b>手指出血：</b>压住出血手指根部<span class="hl">左右两侧</span></li>
+    </ul>
+
+    <details class="q"><summary><span class="qno">10</span><span class="qt">一人面对「额头擦伤者、前臂骨折者、呼吸心跳停止者」，正确救护顺序是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 擦伤 → 骨折 → 心跳停止</span><span>B. 心跳停止 → 骨折 → 擦伤</span><span>C. 心跳停止 → 擦伤 → 骨折</span><span>D. 骨折 → 心跳停止 → 擦伤</span></div>
+      <div class="ans"><b>答案 B。</b>先救命，再处理骨折（可能大出血/致残），最后擦伤。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">11</span><span class="qt">在现场急救中，救护员判断伤员有无呼吸时，应持续观察（ ）秒</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 3</span><span>B. 10</span><span>C. 20</span><span>D. 60</span></div>
+      <div class="ans"><b>答案 B。</b>10 秒是标准值，属于「必背数字」。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>E · 交通与日常常识</h3>
+    <ul class="clean">
+      <li><b>黄灯亮：</b>已越过停止线的车辆可以继续通行</li>
+      <li><b>警车、消防车、救护车、工程救险车</b>执行紧急任务时，其他车辆<span class="hl">应当让行</span></li>
+      <li><b>距宽度不足 4 米的窄路 50 米以内：</b>不准停车</li>
+      <li><b>道路三要素：</b>人、车、道路（＋交通环境，共四大因素）</li>
+      <li><b>指示标志</b>是指示车辆和行人行进的标志</li>
+    </ul>
+
+    <details class="q"><summary><span class="qno">12</span><span class="qt">交通信号灯黄灯亮时（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 允许车辆通行</span><span>B. 已越过停止线的车辆可以继续通行</span><span>C. 允许车辆左转弯</span><span>D. 车辆应当加速通过</span></div>
+      <div class="ans"><b>答案 B。</b>黄灯是「清路口」，只放过已经越线的车。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">13</span><span class="qt">警车、消防车、救护车、工程救险车执行紧急任务时，其他车辆（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 加速穿行</span><span>B. 谨慎超越</span><span>C. 视情让行</span><span>D. 应当让行</span></div>
+      <div class="ans"><b>答案 D。</b>「应当」是硬性义务，「视情」是错的。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ 必背区 ============ -->
+<section id="memorize">
+  <div class="sec-head"><span class="sec-num">3</span><h2>必背区（只能死记）</h2></div>
+  <p class="sec-desc">这一区推不出来，只能背。考前 1 小时只看这一页。</p>
+
+  <div class="card">
+    <h3>① 数字速记表 <span class="tag b">必背</span></h3>
+    <div class="tbl-scroll">
+      <table>
+        <tr><th>考点</th><th>答案</th></tr>
+        <tr><td>申领年龄 / 学历</td><td>满 <b>18</b> 周岁、<b>初中</b>以上</td></tr>
+        <tr><td>《保安员证》审批机关</td><td><b>设区的市级</b>人民政府公安机关</td></tr>
+        <tr><td>考试题量 / 时长 / 及格</td><td><b>100</b> 题 / <b>90</b> 分钟 / <b>60</b> 分</td></tr>
+        <tr><td>考试费</td><td><b>40 元</b>/人次</td></tr>
+        <tr><td>补考</td><td>首次补考<b>免费</b>，第三次起再交 40 元</td></tr>
+        <tr><td>保安员国家职业分级</td><td><b>5 级</b>：初级、中级、高级保安员、保安师、高级保安师</td></tr>
+        <tr><td>中级保安员对应的资格等级</td><td>国家职业资格<b>四级</b></td></tr>
+        <tr><td>灭火器顶部离地面高度</td><td>不大于 <b>1.5 米</b></td></tr>
+        <tr><td>判断有无呼吸观察时间</td><td><b>10 秒</b></td></tr>
+        <tr><td>止血带放松间隔</td><td><b>40～50 分钟</b>放松一次</td></tr>
+        <tr><td>加压包扎敷料超出伤口</td><td><b>3 厘米</b></td></tr>
+        <tr><td>灭火器距火源</td><td><b>3～5 米</b>，站上风处</td></tr>
+        <tr><td>报警电话</td><td>火警 <b>119</b> / 匪警 <b>110</b> / 急救 <b>120</b> / 交通事故 <b>122</b></td></tr>
+        <tr><td>抢劫罪刑事责任年龄</td><td>满 <b>14</b> 周岁</td></tr>
+        <tr><td>保安服务公司注册资本</td><td>不低于 <b>100 万元</b></td></tr>
+        <tr><td>招用不符合条件人员担任保安员</td><td>罚款 <b>1 万～5 万元</b></td></tr>
+        <tr><td>培训机构未按大纲培训（情节严重）</td><td>罚款 <b>5 万～10 万元</b></td></tr>
+        <tr><td>保安员证被吊销后不得从业</td><td><b>3 年</b>内</td></tr>
+        <tr><td>窄路（不足 4 米）内禁止停车范围</td><td><b>50 米</b>以内</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>② 不得担任保安员的 4 种情形 <span class="tag b">必背</span></h3>
+    <ul class="clean">
+      <li>曾被<span class="no">收容教育、强制隔离戒毒、劳动教养</span>，或 <b>3 次以上行政拘留</b>的</li>
+      <li>曾因<span class="no">故意犯罪</span>被刑事处罚的（过失犯罪不受此限）</li>
+      <li>被<span class="no">吊销保安员证未满 3 年</span>的</li>
+      <li>曾<span class="no">两次</span>被吊销保安员证的</li>
+    </ul>
+    <div class="rule">另外：达到法定退休年龄的人员，<b>不再发给</b>保安员证。</div>
+  </div>
+
+  <div class="card">
+    <h3>③ 保安员禁止行为清单 <span class="tag b">必背</span></h3>
+    <p style="margin:0 0 4px;font-size:14.5px;color:var(--muted)">记不住就记「五个动词」：扣、搜、限、打、改。</p>
+    <ul class="clean">
+      <li><b>限</b>：限制他人人身自由</li>
+      <li><b>搜</b>：搜查他人身体、物品</li>
+      <li><b>扣</b>：扣押、没收他人证件和财物</li>
+      <li><b>打</b>：侮辱、殴打他人</li>
+      <li><b>改</b>：删改、扩散监控影像资料</li>
+      <li>＋ 阻碍国家机关工作人员依法执行公务</li>
+      <li>＋ 参与追索债务、采用暴力或威胁手段处置纠纷</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>④ 消防「四懂四会」 <span class="tag b">必背</span></h3>
+    <p style="margin:2px 0 6px;font-size:14.5px"><b>四懂：</b>懂本岗位火灾危险性、懂预防火灾措施、懂扑救火灾方法、懂逃生疏散方法。</p>
+    <p style="margin:0 0 8px;font-size:14.5px"><b>四会：</b>会报警、会使用消防器材、会扑救初起火灾、会组织疏散逃生。</p>
+    <div class="rule g">
+      <strong>灭火器四步口诀：提 → 拔 → 握 → 压</strong>
+      提起灭火器摇一摇，站上风处、距火源 3～5 米，拔掉保险销，握住喷管对准火焰根部，压下压把扫射。
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>⑤ 火灾（事故）等级 <span class="tag b">必背</span></h3>
+    <div class="tbl-scroll">
+      <table>
+        <tr><th>等级</th><th>死亡</th><th>重伤</th><th>直接财产损失</th></tr>
+        <tr><td>特别重大</td><td>30 人以上</td><td>100 人以上</td><td>1 亿元以上</td></tr>
+        <tr><td>重大</td><td>10～30 人</td><td>50～100 人</td><td>5000 万～1 亿元</td></tr>
+        <tr><td>较大</td><td>3～10 人</td><td>10～50 人</td><td>1000 万～5000 万元</td></tr>
+        <tr><td>一般</td><td>3 人以下</td><td>10 人以下</td><td>1000 万元以下</td></tr>
+      </table>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">记忆法：三档分界就是 3／10／30 人和 1000 万／5000 万／1 亿，往上翻一档升一级。</p>
+  </div>
+
+  <div class="card">
+    <h3>⑥ 报警必须说清的五件事 <span class="tag b">必背</span></h3>
+    <ul class="clean">
+      <li>报警人姓名</li>
+      <li>联系电话</li>
+      <li>报警事由（发生了什么）</li>
+      <li>发生单位的名称</li>
+      <li>具体位置</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>⑦ 突发情况三步走 <span class="tag b">必背</span></h3>
+    <p style="margin:0;font-size:15px">① <b>报告</b>：向客户单位和公安机关报告 → ② <b>控制</b>：在确保自身安全的前提下控制事态、保护现场、救助伤员 → ③ <b>配合</b>：配合公安调查，如实提供情况。</p>
+  </div>
+</section>
+
+<!-- ============ 真题 ============ -->
+<section id="drill">
+  <div class="sec-head"><span class="sec-num">4</span><h2>真题示例</h2></div>
+  <p class="sec-desc">以下题目与答案来自网上公开流传的保安员资格考试题库（500 题 / 100 题版），答案已对照《保安服务管理条例》等法规校过。先自己答，再点开。</p>
+
+  <div class="card">
+    <h3>单选题</h3>
+
+    <details class="q"><summary><span class="qno">1</span><span class="qt">我国保安服务具有特许性、有偿性、防范性、（ ）、风险性的特点</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 安全性</span><span>B. 互助性</span><span>C. 多样性</span><span>D. 契约性</span></div>
+      <div class="ans"><b>答案 D。</b>保安服务是合同关系，所以有「契约性」。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">2</span><span class="qt">取得《保安员证》的身体条件是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 身高 1.65 米以上</span><span>B. 达到国家规定体能标准</span><span>C. 身体健康</span><span>D. 眼睛不能近视</span></div>
+      <div class="ans"><b>答案 C。</b>条例只要求「身体健康」，不限身高、不限视力。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">3</span><span class="qt">下列不属于保安员应享有的权利的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 签订劳动合同</span><span>B. 征用车辆救灾抢险</span><span>C. 接受安全教育培训</span><span>D. 享受劳动保护</span></div>
+      <div class="ans"><b>答案 B。</b>征用车辆是行政机关的权限，保安员没有这个权力。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">4</span><span class="qt">保安公司提供武装守护服务时，可依法为保安员配备（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 管制刀具</span><span>B. 电警棍</span><span>C. 防暴枪</span><span>D. 制式武器</span></div>
+      <div class="ans"><b>答案 C。</b>制式武器是军警装备，保安公司不可能有。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">5</span><span class="qt">随身护卫中，护卫对象遭遇突然袭击，保安员应（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 立即严惩袭击者</span><span>B. 对护卫对象采取保护措施</span><span>C. 立即扣押袭击者</span><span>D. 立即搜查袭击者</span></div>
+      <div class="ans"><b>答案 B。</b>随身护卫第一职责是保人，不是抓人。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">6</span><span class="qt">张三拿椅子砸李四头部，李四边躲边用另一椅子抵挡致张三受伤。李四的行为属于（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 紧急避险</span><span>B. 自救行为</span><span>C. 正当防卫</span><span>D. 犯罪行为</span></div>
+      <div class="ans"><b>答案 C。</b>针对正在进行的不法侵害、为保护自身安全而反击，是正当防卫。<em>紧急避险是「损害第三方利益保全自己」，别混。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">7</span><span class="qt">关于保安员履行查验与登记职责，说法错误的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 可以查验出入人员证件</span><span>B. 可以对出入车辆登记</span><span>C. 不能查验本单位人员证件</span><span>D. 必要时可登记内部车辆出入</span></div>
+      <div class="ans"><b>答案 C。</b>本单位人员同样要验证，内部人不是免检牌。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">8</span><span class="qt">音乐节入口发现无人认领的可疑包裹，内有爆炸威胁纸条，最先应（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 停止观众入场</span><span>B. 立即报警并向服务单位报告</span><span>C. 设置隔离区</span><span>D. 疏散已入场人员</span></div>
+      <div class="ans"><b>答案 B。</b>先报警＋报告，后续按指令处置。<em>顺序型题：报告永远在前。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">9</span><span class="qt">某市保安公司客户经理甲编造信息、散发传单损害乙的名誉，致乙精神严重受损。甲的行为属于（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 故意伤害</span><span>B. 招摇撞骗</span><span>C. 寻衅滋事</span><span>D. 侮辱他人</span></div>
+      <div class="ans"><b>答案 D。</b>公开贬损他人人格、破坏名誉，是侮辱。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">10</span><span class="qt">我国《刑法》规定，年满（ ）周岁且具备刑事责任能力的人，可构成抢劫罪主体</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 14</span><span>B. 16</span><span>C. 18</span><span>D. 20</span></div>
+      <div class="ans"><b>答案 A。</b>已满 14 周岁不满 16 周岁，犯故意杀人、故意伤害致重伤或死亡、强奸、抢劫等八类罪的，要负刑事责任。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">11</span><span class="qt">手提灭火器应当设置在其顶部离地面高度（ ）m 处</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 2.5</span><span>B. 0.5</span><span>C. 1.0</span><span>D. 1.5</span></div>
+      <div class="ans"><b>答案 D。</b>顶部不大于 1.5 米，底部不宜小于 0.08 米（方便取用）。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">12</span><span class="qt">保安员在发电厂固定岗位值勤，遇火灾发生，首先要做的是（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 抢救受伤人员</span><span>B. 拉电闸断电并报警</span><span>C. 立即报警</span><span>D. 组织人员救火</span></div>
+      <div class="ans"><b>答案 B。</b>电力场所先断电再灭火，否则有触电和复燃风险，同时报警。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>多选题 <span class="tag b">少选错选都不得分</span></h3>
+
+    <details class="q"><summary><span class="qno">1</span><span class="qt">下列属于保安员禁止性行为的有（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 限制他人人身自由</span><span>B. 搜查他人身体</span><span>C. 扣押他人证件</span><span>D. 查验出入人员证件</span></div>
+      <div class="ans"><b>答案 ABC。</b>D 是本职权限。<em>多选题常把「禁止项」和「职责项」混在一起，先分清性质再选。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">2</span><span class="qt">发生盗窃案件后，保安员保护现场应做到（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 划定现场保护范围</span><span>B. 封锁看守、维护秩序</span><span>C. 适时采取急救措施</span><span>D. 寻找知情人和案件线索</span><span>E. 进入现场清点财物损失</span></div>
+      <div class="ans"><b>答案 ABCD。</b>E 错，清点财物会破坏现场。<em>现场保护＝不进、不动、不碰。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">3</span><span class="qt">消防「四会」包括（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 会报警</span><span>B. 会使用消防器材</span><span>C. 会扑救初起火灾</span><span>D. 会组织疏散逃生</span></div>
+      <div class="ans"><b>答案 ABCD。</b>四会全选，一个都不能少。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">4</span><span class="qt">押运途中被押物品包装发生损坏，押运员正确的做法有（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 立即查明原因</span><span>B. 重新包装好</span><span>C. 做好检查记录</span><span>D. 及时报告</span><span>E. 不做任何处理</span></div>
+      <div class="ans"><b>答案 ABCD。</b>查明、处置、记录、报告，四件事都要做。<em>凡是「不做处理」「自行放行」的选项直接排除。</em></div>
+    </details>
+
+    <details class="q"><summary><span class="qno">5</span><span class="qt">下列人员中，不得担任保安员的有（ ）</span><span class="arrow">›</span></summary>
+      <div class="opts"><span>A. 曾因故意犯罪被刑事处罚的</span><span>B. 3 次以上被行政拘留的</span><span>C. 被吊销保安员证未满 3 年的</span><span>D. 曾两次被吊销保安员证的</span><span>E. 曾因交通违章被罚款的</span></div>
+      <div class="ans"><b>答案 ABCD。</b>E 属于一般违法，不影响申领。</div>
+    </details>
+  </div>
+
+  <div class="card">
+    <h3>判断题（易错点）</h3>
+    <p style="margin:0 0 2px;font-size:14px;color:var(--muted)">这 5 句是高频判断题的正确表述，读一遍就够。</p>
+
+    <details class="q"><summary><span class="qno">✓</span><span class="qt">保安员对执勤区域内的不法侵害行为应及时制止，并将不法行为人扭送公安机关。</span><span class="arrow">›</span></summary>
+      <div class="ans"><b>正确。</b>「制止 + 扭送」是保安员的法定权限，但注意是「在确保安全的情况下」。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">✗</span><span class="qt">保安员在紧急情况下可以搜查可疑人员的身体和随身物品。</span><span class="arrow">›</span></summary>
+      <div class="ans"><b>错误。</b>搜查权只属于法定机关，任何「紧急情况」都不例外。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">✗</span><span class="qt">保安员可以应客户要求，对欠款人进行跟随、堵门等方式催收债务。</span><span class="arrow">›</span></summary>
+      <div class="ans"><b>错误。</b>参与追索债务是明令禁止行为，客户要求也不行。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">✓</span><span class="qt">保安员有权拒绝执行客户单位违反法律法规的指令。</span><span class="arrow">›</span></summary>
+      <div class="ans"><b>正确。</b>违法指令可以拒绝，并且应当报告。</div>
+    </details>
+
+    <details class="q"><summary><span class="qno">✗</span><span class="qt">为防止事态扩大，保安员可以暂时扣押闹事人员的身份证件。</span><span class="arrow">›</span></summary>
+      <div class="ans"><b>错误。</b>扣押证件、财物是禁止行为，正确做法是报告并配合公安处置。</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ 计划 ============ -->
+<section id="plan">
+  <div class="sec-head"><span class="sec-num">5</span><h2>3 天冲刺计划</h2></div>
+  <p class="sec-desc">每天 1～1.5 小时，不需要请假。已经上班的人按这个走就够。</p>
+
+  <div class="card">
+    <ul class="plan">
+      <li>
+        <div class="d">DAY 1 · 建立框架（60 分钟）</div>
+        <div class="t">先看本页「答题元规则」＋「常识可推区」，把权责边界弄明白。然后刷 200 题（按章节刷，别计时），错题当场看解析，错的题目标记出来。</div>
+      </li>
+      <li>
+        <div class="d">DAY 2 · 补短板（60 分钟）</div>
+        <div class="t">刷 300 题，重点攻消防、急救、交通三块。把「必背区」的数字表读两遍，边读边用手遮住右列自测。</div>
+      </li>
+      <li>
+        <div class="d">DAY 3 · 模拟 + 复盘（90 分钟）</div>
+        <div class="t">做 2～3 套完整模拟卷，严格 90 分钟、按机考节奏（先单选判断，最后多选）。<b>模拟稳定 70 分以上，正式考试基本没问题。</b>剩下的时间只过错题。</div>
+      </li>
+      <li>
+        <div class="d">考前 1 小时</div>
+        <div class="t">只看「必背区」＋错题本，不要开新题。进考场前把手机放包里。</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="rule g">
+    <strong>刷题量参考</strong>
+    公开题库一般 500～800 题，全部刷完 + 错题过两遍，对应考试 100 题的抽取量完全够。题库在「考点电子题库」「刷题 App」「电商纸质题库」都能拿到，选一个顺手的就行，不要贪多买三份。
+  </div>
+</section>
+
+<!-- ============ 考场 ============ -->
+<section id="exam">
+  <div class="sec-head"><span class="sec-num">6</span><h2>考场避坑</h2></div>
+
+  <div class="card">
+    <ul class="clean">
+      <li>带<b>身份证原件</b>，现场人脸识别，<b>不能替考</b>（代考直接零分）</li>
+      <li>手机<b>关机</b>放进收纳袋，考试中掏手机即零分处理，没有商量余地</li>
+      <li>点「交卷」后<b>不能返回改答案</b>，用剩余时间逐题核对再交</li>
+      <li>电脑卡住、点不动，<b>举手示意</b>，不要自己重启或大声说话</li>
+      <li>第一次没过有<b>一次免费补考</b>，第三次起再交 40 元</li>
+      <li>单选题先做、多选题最后做；多选题宁可少选，别乱凑</li>
+      <li>看到「下列说法错误/不属于」先在题干上做记号，再选</li>
+      <li>警惕「<b>免考拿证</b>」「<b>包过</b>」——那种证在公安系统查不到，等于白花钱</li>
+    </ul>
+  </div>
+
+  <div class="rule w">
+    <strong>信息核对提醒</strong>
+    报名入口、考点地址、培训费、考试时间都以你收到的<b>准考证/短信通知</b>和属地公安机关的公示为准。本页信息整理于 2026 年 11 月，政策如有调整以最新公告为准。
+  </div>
+</section>
+
+<footer>
+  <p><b>内容来源：</b>《保安服务管理条例》《公安机关实施保安服务管理条例办法》《浙江省保安员资格考试实施办法（试行）》、杭州本地宝 2026 年报考须知、中国保安协会《保安员岗位实操指南》、网上公开流传的保安员资格考试题库（500 题 / 100 题版）及考生经验帖。</p>
+  <p>本页为个人备考笔记，非官方资料；答案已按法规校对，但公开题库存在版本差异，遇到矛盾以法规条文为准。</p>
+</footer>
+
+</div>
+
+<button id="speak" aria-label="朗读当前章节"><span class="dot"></span><span id="speak-label">朗读本节</span></button>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('#tabs a'));
+  var sections = tabs.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+
+  // 滚动高亮
+  function setActive(id) {
+    tabs.forEach(function (a) {
+      a.classList.toggle('on', a.getAttribute('href') === '#' + id);
+    });
+  }
+  var current = 'quick';
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { current = e.target.id; setActive(current); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function (s) { if (s) io.observe(s); });
+  }
+
+  // 朗读
+  var btn = document.getElementById('speak');
+  var label = document.getElementById('speak-label');
+  var speaking = false;
+
+  function stop() {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    speaking = false;
+    btn.classList.remove('on');
+    label.textContent = '朗读本节';
+  }
+
+  btn.addEventListener('click', function () {
+    if (speaking) { stop(); return; }
+    if (!('speechSynthesis' in window)) { label.textContent = '设备不支持朗读'; return; }
+
+    var sec = document.getElementById(current);
+    if (!sec) return;
+
+    // 取正文，去掉按钮类文字
+    var clone = sec.cloneNode(true);
+    clone.querySelectorAll('.arrow,.qno,.sec-num,button').forEach(function (n) { n.remove(); });
+    var text = clone.textContent.replace(/\s+/g, ' ').trim();
+    if (!text) return;
+
+    // 按句切块，避免单条过长被截断
+    var chunks = text.match(/[^。！？；]{1,90}[。！？；]?/g) || [text];
+    var i = 0;
+    speaking = true;
+    btn.classList.add('on');
+    label.textContent = '停止朗读';
+
+    function next() {
+      if (!speaking || i >= chunks.length) { stop(); return; }
+      var u = new SpeechSynthesisUtterance(chunks[i++]);
+      u.lang = 'zh-CN';
+      u.rate = 1.0;
+      u.onend = next;
+      u.onerror = next;
+      window.speechSynthesis.speak(u);
+    }
+    window.speechSynthesis.cancel();
+    next();
+  });
+
+  // 页面隐藏时停止
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden && speaking) stop();
+  });
+})();
+</script>
+</body>
+</html>
